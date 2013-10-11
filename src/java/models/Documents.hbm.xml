@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 4 oct. 2013 11:07:25 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="models.Documents"  lazy="false" table="Documents" catalog="GED">
+        <id name="idDoc" type="java.lang.Integer">
+            <column name="ID_doc" />
+            <generator class="identity" />
+        </id>
+        <property name="chemin" type="string">
+            <column name="chemin" />
+        </property>
+        <property name="taille" type="string">
+            <column name="taille" not-null="true" />
+        </property>
+        <property name="formatDoc" type="string">
+            <column name="format_doc" not-null="true" />
+        </property>
+        <set name="metadatas" inverse="true">
+            <key>
+                <column name="ID_Doc" not-null="true" />
+            </key>
+            <one-to-many class="models.Metadata" />
+        </set>
+    </class>
+</hibernate-mapping>

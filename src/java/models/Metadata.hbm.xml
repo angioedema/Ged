@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 4 oct. 2013 11:07:25 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="models.Metadata"  lazy="false" table="Metadata" catalog="GED">
+        <id name="idMd" type="java.lang.Integer">
+            <column name="ID_MD" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="documents" class="models.Documents" fetch="select">
+            <column name="ID_Doc" not-null="true" />
+        </many-to-one>
+        <many-to-one name="datatype" class="models.Datatype" fetch="select">
+            <column name="ID_DT" not-null="true" />
+        </many-to-one>
+        <property name="valeur" type="string">
+            <column name="valeur" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

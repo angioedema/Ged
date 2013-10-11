@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 4 oct. 2013 11:07:25 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="models.Datatype"  lazy="false" table="Datatype" catalog="GED">
+        <id name="idDt" type="java.lang.Integer">
+            <column name="ID_DT" />
+            <generator class="identity" />
+        </id>
+        <property name="intitule" type="string">
+            <column name="intitule" not-null="true" />
+        </property>
+        <set name="metadatas" inverse="true">
+            <key>
+                <column name="ID_DT" not-null="true" />
+            </key>
+            <one-to-many class="models.Metadata" />
+        </set>
+    </class>
+</hibernate-mapping>

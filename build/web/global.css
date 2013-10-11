@@ -1,0 +1,30 @@
+/* 
+    Document   : global
+    Created on : 9 oct. 2013, 09:11:44
+    Author     : armellekieffer
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+#top    {
+    background-color: #B3E8F2;
+}
+
+#title  {
+    background-color: #B3E8F2;
+    float: left;
+    margin-left: 100px;
+    padding: 25px 350px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+
+#left a   {
+    text-decoration: none;
+    padding: 20px;
+}
