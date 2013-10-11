@@ -48,8 +48,9 @@ public class MetadataController  implements java.io.Serializable {
         metadata.setIdMd(metadataDao.ajouteMetadata(metadata));
         metadatas.add(metadata);
         metadata = new Metadata();
-    
     }
+    
+    
 }
 
 

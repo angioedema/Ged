@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+	<h:head>
+	    <f:facet name="first">
+		<meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+		<title>GPHYGED - Ajouter</title>
+                <link href="global.css" rel="stylesheet" type="text/css"/>
+	    </f:facet>
+	</h:head>
+
+       <h:body>
+             <p:layout fullPage="true" >
+            <p:layoutUnit id="top" position="north" size="150" collapsible="true">
+                <img src="img/logo.gif" style="float: left;" />
+                <h1 id="title">GPHY GED</h1>
+                <img src="img/logo.gif" style="float: right;" />
+            </p:layoutUnit>
+             <p:layoutUnit id="left" position="west" size="300" header="GED" minSize="200">
+                <p:button outcome="index.xhtml" value="Accueil"></p:button> 
+                 <p:accordionPanel>
+                     <p:tab title="Ajouter">
+                         <br />
+                            <h:link outcome="add_datatypes.xhtml" value="Ajouter des types de données" />
+                         <br />
+                            <h:link outcome="add_doc.xhtml" value="Ajouter des documents" />
+                         <br/>
+                            <h:link outcome="add_metadata.xhtml" value="Ajouter des métadatas" />
+                         <br/>  
+                     </p:tab>
+                 </p:accordionPanel>
+             </p:layoutUnit>
+            
+             <p:layoutUnit id="center" position="center">
+            <h:form>
+               
+                <p:dataTable value="#{metadataController.}" var="md">
+                    <p:column>
+                        <f:facet name="header">Id</f:facet>  
+                        <h:outputText value="#{md.idMd}"/>
+                    </p:column> 
+                    <p:column>
+                        <f:facet name="header">Chemin</f:facet>  
+                        <h:outputText value="#{md.documents.chemin}"/>
+                    </p:column> 
+                    <p:column>
+                        <f:facet name="header">Valeur</f:facet>  
+                        <h:outputText value="#{md.valeur}"/>
+                    </p:column> 
+                </p:dataTable>
+            </h:form>
+             </p:layoutUnit>
+        </p:layout>
+          
+        </h:body>
+
+    </f:view>
+</html>
+
