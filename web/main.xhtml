@@ -18,7 +18,18 @@
             <p:layoutUnit id="left" position="west" size="300" header="GED" minSize="200">
                 <p:button outcome="index.xhtml" value="Accueil"></p:button> 
                  <p:accordionPanel>
-                     <p:tab title="Ajouter">
+                     <p:tab title="Lecture">
+                         <br />
+                             <h:link outcome="lectureMusiques.xhtml" value="Toutes les musiques" />
+                         <br /> 
+                     </p:tab>
+                     <p:tab title="Affichage">
+                         <br />
+                             <h:link outcome="afficheMusiques.xhtml" value="Toutes les musiques" />
+                         <br /> 
+                     </p:tab>
+
+                     <p:tab title="Ajout">
                          <br />
                             <h:link outcome="add_datatypes.xhtml" value="Ajouter des types de données" />
                          <br />
