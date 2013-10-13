@@ -55,21 +55,23 @@
                         <h:outputText value="#{documentsDAO.getMetadataFromDoc(doc.idDoc)[0]}"/>
                     </p:column>
                     <p:column>
-                        <f:facet name="header">Genre</f:facet>  
+                        <f:facet name="header">Artiste</f:facet>  
                         <h:outputText value="#{documentsDAO.getMetadataFromDoc(doc.idDoc)[1]}"/>
-                    </p:column>   
+                    </p:column>  
                     <p:column>
-                        <f:facet name="header">Duree</f:facet>  
+                        <f:facet name="header">Genre</f:facet>  
                         <h:outputText value="#{documentsDAO.getMetadataFromDoc(doc.idDoc)[2]}"/>
                     </p:column>
                     <p:column>
-                        <f:facet name="header">Artiste</f:facet>  
-                        <h:outputText value="#{documentsDAO.getMetadataFromDoc(doc.idDoc)[3]}"/>
-                    </p:column>  
-                    <p:column>
                         <f:facet name="header">Album</f:facet>  
+                        <h:outputText value="#{documentsDAO.getMetadataFromDoc(doc.idDoc)[3]}"/>
+                    </p:column>   
+                    <p:column>
+                        <f:facet name="header">Duree</f:facet>  
                         <h:outputText value="#{documentsDAO.getMetadataFromDoc(doc.idDoc)[4]}"/>
-                    </p:column>  
+                    </p:column>
+
+
                 </p:dataTable>
                 
    
