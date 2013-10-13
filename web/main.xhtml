@@ -13,45 +13,41 @@
     <h:body>
         <p:layout fullPage="true" >
             <p:layoutUnit id="top" position="north" size="150" collapsible="true">
+                <img src="img/logo.gif" style="float: left;" />
                 <h1 id="title">GPHY GED</h1>
+                <img src="img/logo.gif" style="float: right;" />
             </p:layoutUnit>
             <p:layoutUnit id="left" position="west" size="300" header="GED" minSize="200">
-                <p:button outcome="index.xhtml" value="Accueil"></p:button> 
-                 <p:accordionPanel>
-                     <p:tab title="Lecture">
-                         <br />
-                             <h:link outcome="lectureMusiques.xhtml" value="Toutes les musiques" />
-                         <br /> 
-                     </p:tab>
-                     <p:tab title="Affichage">
-                         <br />
-                             <h:link outcome="afficheMusiques.xhtml" value="Toutes les musiques" />
-                         <br /> 
-                     </p:tab>
+                <p:button outcome="main.xhtml" value="Accueil"></p:button> 
+                <p:accordionPanel>
+                    <p:tab title="Lecture">
+                        <br />
+                        <h:link outcome="lectureMusiques.xhtml" value="Toutes les musiques" />
+                        <br /> 
+                    </p:tab>
+                    <p:tab title="Affichage">
+                        <br />
+                        <h:link outcome="afficheMusiques.xhtml" value="Toutes les musiques" />
+                        <br /> 
+                    </p:tab>
 
-                     <p:tab title="Ajout">
-                         <br />
-                            <h:link outcome="add_datatypes.xhtml" value="Ajouter des types de données" />
-                         <br />
-                            <h:link outcome="add_doc.xhtml" value="Ajouter des documents" />
-                         <br/>
-                            <h:link outcome="add_metadata.xhtml" value="Ajouter des métadatas" />
-                         <br/>  
-                             <h:link outcome="afficheMusiques.xhtml" value="Ajouter des métadatas" />
-                         <br/> 
-                     </p:tab>
-                 </p:accordionPanel>
-             </p:layoutUnit>
-            
-             <p:layoutUnit id="center" position="center">
-                 <h:form>
-                     <!-- <ui:include src ="add_datatypes.xhtml"/> -->
-                     <img src="img/lol.jpg" width="500px" />
-                 </h:form>
-             </p:layoutUnit>
+                    <p:tab title="Ajouter">
+                        <br />
+                        <h:link outcome="add_datatypes.xhtml" value="Ajouter des types de données" />
+                        <br />
+                        <h:link outcome="add_doc.xhtml" value="Ajouter des documents" />
+                        <br/>
+                        <h:link outcome="add_metadata.xhtml" value="Ajouter des métadatas" />
+                        <br/>  
+                    </p:tab>
+                </p:accordionPanel>
+            </p:layoutUnit>
+
+            <p:layoutUnit id="center" position="center">
+            </p:layoutUnit>
 
         </p:layout>
-        
+
     </h:body>
 </html>
 
