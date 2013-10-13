@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 12 oct. 2013 18:49:39 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-    <class name="models.Users" table="users" catalog="ged">
+    <class name="models.Users" table="Users" catalog="GED">
         <id name="id" type="java.lang.Integer">
             <column name="Id" />
             <generator class="identity" />

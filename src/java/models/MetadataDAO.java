@@ -40,17 +40,25 @@ public class MetadataDAO implements Serializable {
             Transaction tx = session2.beginTransaction();
             Query q = session2.createQuery("from Metadata");
             metadata = (List<Metadata>) q.list();
-            tx.commit();
-            
-            
-            
-            
+            tx.commit();            
         } catch (Exception e) {
             e.printStackTrace();
         }
         return metadata;
     } 
-
+    public List getImageMetadata() {
+        List<Metadata> metadata = null;
+        try {
+            session2 = HibernateUtil.getSessionFactory().getCurrentSession();
+            Transaction tx = session2.beginTransaction();
+            Query q = session2.createQuery("from Metadata where ID_DT = 12");
+            metadata = (List<Metadata>) q.list();
+            tx.commit();            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return metadata;
+    } 
         
     public Integer ajouteMetadata(Metadata metadata) {
         Integer metadataId = null;

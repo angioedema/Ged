@@ -17,6 +17,16 @@ public class MetadataController  implements java.io.Serializable {
     private MetadataDAO metadataDao;
     private Metadata metadata;
     private static List<Metadata> metadatas = null;
+    private static List<Metadata> albums = null;
+
+    public void setAlbums(List<Metadata> albums) {
+        MetadataController.albums = albums;
+    }
+
+    public List<Metadata> getAlbums() {
+        return albums;
+    }
+
     
     public Metadata getMetadata() {
         return metadata;
@@ -38,6 +48,7 @@ public class MetadataController  implements java.io.Serializable {
 	metadataDao = new MetadataDAO();
         metadata = new Metadata();
         ListeDesMetadata();
+        album();
     }
 
     public void ListeDesMetadata() {
@@ -50,6 +61,9 @@ public class MetadataController  implements java.io.Serializable {
         metadata = new Metadata();
     }
     
+    public void album(){
+        setAlbums( metadataDao.getImageMetadata());
+    }
     
 }
 
