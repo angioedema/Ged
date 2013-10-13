@@ -6,77 +6,84 @@
       xmlns:p="http://primefaces.org/ui">
 
     <f:view contentType="text/html">
-	<h:head>
-	    <f:facet name="first">
-		<meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
-		<title>GPHYGED - Ajouter</title>
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>GPHYGED - Ajouter</title>
                 <link href="global.css" rel="stylesheet" type="text/css"/>
-	    </f:facet>
-	</h:head>
+            </f:facet>
+        </h:head>
 
-       <h:body>
-             <p:layout fullPage="true" >
-            <p:layoutUnit id="top" position="north" size="150" collapsible="true">
-                <img src="img/logo.gif" style="float: left;" />
-                <h1 id="title">GPHY GED</h1>
-                <img src="img/logo.gif" style="float: right;" />
-            </p:layoutUnit>
-             <p:layoutUnit id="left" position="west" size="300" header="GED" minSize="200">
-                <p:button outcome="index.xhtml" value="Accueil"></p:button> 
-                 <p:accordionPanel>
-                     <p:tab title="Ajouter">
-                         <br />
+        <h:body>
+            <p:layout fullPage="true" >
+                <p:layoutUnit id="top" position="north" size="150" collapsible="true">
+                    <img src="img/logo.gif" style="float: left;" />
+                    <h1 id="title">GPHY GED</h1>
+                    <img src="img/logo.gif" style="float: right;" />
+                </p:layoutUnit>
+                <p:layoutUnit id="left" position="west" size="300" header="GED" minSize="200">
+                    <p:button outcome="main.xhtml" value="Accueil"></p:button> 
+                    <p:accordionPanel>
+                        <p:tab title="Lecture">
+                            <br />
+                            <h:link outcome="lectureMusiques.xhtml" value="Toutes les musiques" />
+                            <br /> 
+                        </p:tab>
+                        <p:tab title="Affichage">
+                            <br />
+                            <h:link outcome="afficheMusiques.xhtml" value="Toutes les musiques" />
+                            <br /> 
+                        </p:tab>
+
+                        <p:tab title="Ajouter">
+                            <br />
                             <h:link outcome="add_datatypes.xhtml" value="Ajouter des types de données" />
-                         <br />
+                            <br />
                             <h:link outcome="add_doc.xhtml" value="Ajouter des documents" />
-                         <br/>
+                            <br/>
                             <h:link outcome="add_metadata.xhtml" value="Ajouter des métadatas" />
-                         <br/> 
-                             <h:link outcome="afficheMusiques.xhtml" value="Ajouter des métadatas" />
-                         <br/>                          
-                     </p:tab>
-                 </p:accordionPanel>
-             </p:layoutUnit>
-            
-             <p:layoutUnit id="center" position="center">
-            <h:form>
-                
-                <p:separator/>
-				                
-                <p:dataTable value="#{documentsController.documents}" var="doc">
-                    <p:column>
-                        <f:facet name="header">Titre</f:facet>  
-                        <h:outputText value="#{documentsDAO.getMetadataFromDoc(doc.idDoc)[0]}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">Taille</f:facet>  
-                        <h:outputText value="#{doc.taille}"/>
-                    </p:column>                        
-                    <p:column>
-                        <f:facet name="header">Artiste</f:facet>  
-                        <h:outputText value="#{documentsDAO.getMetadataFromDoc(doc.idDoc)[1]}"/>
-                    </p:column>  
-                    <p:column>
-                        <f:facet name="header">Genre</f:facet>  
-                        <h:outputText value="#{documentsDAO.getMetadataFromDoc(doc.idDoc)[2]}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">Album</f:facet>  
-                        <h:outputText value="#{documentsDAO.getMetadataFromDoc(doc.idDoc)[3]}"/>
-                    </p:column>   
-                    <p:column>
-                        <f:facet name="header">Duree</f:facet>  
-                        <h:outputText value="#{documentsDAO.getMetadataFromDoc(doc.idDoc)[4]}"/>
-                    </p:column>
+                            <br/>  
+                        </p:tab>
+                    </p:accordionPanel>
+                </p:layoutUnit>
+
+                <p:layoutUnit id="center" position="center">
+                    <h:form>
+
+                        <p:separator/>
+
+                        <p:dataTable value="#{documentsController.documents}" var="doc">
+                            <p:column>
+                                <f:facet name="header">Titre</f:facet>  
+                                <h:outputText value="#{documentsDAO.getMetadataFromDoc(doc.idDoc)[0]}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">Taille</f:facet>  
+                                <h:outputText value="#{doc.taille}"/>
+                            </p:column>                        
+                            <p:column>
+                                <f:facet name="header">Artiste</f:facet>  
+                                <h:outputText value="#{documentsDAO.getMetadataFromDoc(doc.idDoc)[1]}"/>
+                            </p:column>  
+                            <p:column>
+                                <f:facet name="header">Genre</f:facet>  
+                                <h:outputText value="#{documentsDAO.getMetadataFromDoc(doc.idDoc)[2]}"/>
+                            </p:column>
+                            <p:column>
+                                <f:facet name="header">Album</f:facet>  
+                                <h:outputText value="#{documentsDAO.getMetadataFromDoc(doc.idDoc)[3]}"/>
+                            </p:column>   
+                            <p:column>
+                                <f:facet name="header">Duree</f:facet>  
+                                <h:outputText value="#{documentsDAO.getMetadataFromDoc(doc.idDoc)[4]}"/>
+                            </p:column>
+                        </p:dataTable>
 
 
-                </p:dataTable>
-                
-   
-            </h:form>
-             </p:layoutUnit>
-        </p:layout>
-          
+                    </h:form>
+                </p:layoutUnit>
+            </p:layout>
+
         </h:body>
 
     </f:view>

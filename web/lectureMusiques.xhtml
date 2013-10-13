@@ -22,22 +22,31 @@
                     <h1 id="title">GPHY GED</h1>
                     <img src="img/logo.gif" style="float: right;" />
                 </p:layoutUnit>
-                <p:layoutUnit id="left" position="west" size="300" header="GED" minSize="200">
-                    <p:button outcome="index.xhtml" value="Accueil"></p:button> 
-                    <p:accordionPanel>
-                        <p:tab title="Ajouter">
-                            <br />
+ <p:layoutUnit id="left" position="west" size="300" header="GED" minSize="200">
+                <p:button outcome="main.xhtml" value="Accueil"></p:button> 
+                 <p:accordionPanel>
+                     <p:tab title="Lecture">
+                         <br />
+                             <h:link outcome="lectureMusiques.xhtml" value="Toutes les musiques" />
+                         <br /> 
+                     </p:tab>
+                     <p:tab title="Affichage">
+                         <br />
+                             <h:link outcome="afficheMusiques.xhtml" value="Toutes les musiques" />
+                         <br /> 
+                     </p:tab>
+
+                     <p:tab title="Ajouter">
+                         <br />
                             <h:link outcome="add_datatypes.xhtml" value="Ajouter des types de données" />
-                            <br />
+                         <br />
                             <h:link outcome="add_doc.xhtml" value="Ajouter des documents" />
-                            <br/>
+                         <br/>
                             <h:link outcome="add_metadata.xhtml" value="Ajouter des métadatas" />
-                            <br/>   
-                            <h:link outcome="afficheMusiques.xhtml" value="Ajouter des métadatas" />
-                            <br/> 
-                        </p:tab>
-                    </p:accordionPanel>
-                </p:layoutUnit>
+                         <br/>  
+                     </p:tab>
+                 </p:accordionPanel>
+             </p:layoutUnit>
 
                 <p:layoutUnit id="center" position="center">
                     <h:form id="form">  
