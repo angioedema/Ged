@@ -3,3 +3,5 @@
 *.jar
 *.class
 !lib/*
+/nbproject/private/
+/build/

@@ -13,29 +13,30 @@
     <h:body>
         <p:layout fullPage="true" >
             <p:layoutUnit id="top" position="north" size="150" collapsible="true">
-                <img src="img/logo.gif" style="float: left;" />
                 <h1 id="title">GPHY GED</h1>
-                <img src="img/logo.gif" style="float: right;" />
             </p:layoutUnit>
-            <p:layoutUnit id="left" position="west" size="300" header="GED" minSize="200">
-                <p:button outcome="index.xhtml" value="Accueil"></p:button> 
-                 <p:accordionPanel>
-                     <p:tab title="Ajouter">
-                         <br />
-                            <h:link outcome="add_datatypes.xhtml" value="Ajouter des types de données" />
-                         <br />
-                            <h:link outcome="add_doc.xhtml" value="Ajouter des documents" />
-                         <br/>
-                            <h:link outcome="add_metadata.xhtml" value="Ajouter des métadatas" />
-                         <br/>  
-                     </p:tab>
-                 </p:accordionPanel>
-             </p:layoutUnit>
-            
+                
              <p:layoutUnit id="center" position="center">
                  <h:form>
-                     <!-- <ui:include src ="add_datatypes.xhtml"/> -->
-                     <img src="img/lol.jpg" width="500px" />
+                    <div id ="errorBox_index" style="margin: auto;">
+                            <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" /> 
+                    </div>
+
+                    <div id ="loginBox_index">
+
+                        <p:panelGrid columns="2" style="margin: auto;"> 
+
+                            <h:outputLabel for="login_index" value="Login:" />  
+                            <p:inputText id="login_index" value="#{userController.user.login}" label="login" />  
+
+                            <h:outputLabel for="password_index" value="Password:" />  
+                            <p:password id="password_index" value="#{userController.user.password}" label="passwd" /> 
+
+                            <h:outputLabel value="" />
+                            <p:commandButton value="Connect me!" action="#{userController.checkUser()}" update="messages"/>
+
+                        </p:panelGrid> 
+                    </div>
                  </h:form>
              </p:layoutUnit>
 
