@@ -49,24 +49,30 @@
                 
                 <p:separator/>
 				                
-                <p:dataTable value="#{documentsController.documents}" var="document">
+                <p:dataTable value="#{documentsController.documents}" var="doc">
                     <p:column>
-                        <f:facet name="header">Id</f:facet>  
-                        <h:outputText value="#{document.idDoc}"/>
-                    </p:column> 
+                        <f:facet name="header">Titre</f:facet>  
+                        <h:outputText value="#{documentsDAO.getMetadataFromDoc(doc.idDoc)[0]}"/>
+                    </p:column>
                     <p:column>
-                        <f:facet name="header">Chemin</f:facet>  
-                        <h:outputText value="#{document.chemin}"/>
-                    </p:column> 
+                        <f:facet name="header">Genre</f:facet>  
+                        <h:outputText value="#{documentsDAO.getMetadataFromDoc(doc.idDoc)[1]}"/>
+                    </p:column>   
                     <p:column>
-                        <f:facet name="header">Taille</f:facet>  
-                        <h:outputText value="#{document.taille}"/>
-                    </p:column> 
+                        <f:facet name="header">Duree</f:facet>  
+                        <h:outputText value="#{documentsDAO.getMetadataFromDoc(doc.idDoc)[2]}"/>
+                    </p:column>
                     <p:column>
-                        <f:facet name="header">Format</f:facet>  
-                        <h:outputText value="#{document.formatDoc}"/>
-                    </p:column> 
+                        <f:facet name="header">Artiste</f:facet>  
+                        <h:outputText value="#{documentsDAO.getMetadataFromDoc(doc.idDoc)[3]}"/>
+                    </p:column>  
+                    <p:column>
+                        <f:facet name="header">Album</f:facet>  
+                        <h:outputText value="#{documentsDAO.getMetadataFromDoc(doc.idDoc)[4]}"/>
+                    </p:column>  
                 </p:dataTable>
+                
+   
             </h:form>
              </p:layoutUnit>
         </p:layout>

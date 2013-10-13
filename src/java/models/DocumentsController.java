@@ -2,6 +2,7 @@ package models;
 // Generated 4 oct. 2013 11:25:37 by Hibernate Tools 3.2.1.GA
 
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -34,18 +35,26 @@ public class DocumentsController  implements java.io.Serializable {
         document = new Documents();
     }
     
+//    public List getMetadataFromDoc(Integer id) {
+//        return documentDao.getMetadataFromDoc(id);
+//    }
+    
     public List<Documents> getDocuments() {
         return documents;
     }
+    
     public void setDocuments(List<Documents> documents) {
         this.documents = documents;
     }
+    
     public Documents getDocument() {
         return document;
     }
+    
     public void setDocument(Documents document) {
         this.document = document;
     }
+  
 }
 
 

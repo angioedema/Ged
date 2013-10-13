@@ -3,6 +3,7 @@ package models;
 
 
 import java.io.Serializable;
+import java.util.HashMap;
 import utils.*;
 import java.util.HashSet;
 import java.util.List;
@@ -51,6 +52,28 @@ public class DocumentsDAO implements Serializable {
         }
         return documentId;
     } 
+    
+       public String[] getMetadataFromDoc(Integer id) {
+        List<Metadata> metadata = null;
+        HashMap<String, String> hash =new HashMap<String,String>(); 
+        String[] vals = new String[5];
+        try {
+            session = HibernateUtil.getSessionFactory().getCurrentSession();
+            Transaction tx = session.beginTransaction();
+            Query q = session.createQuery("from Metadata where ID_Doc = "+ id+ "");
+            metadata = (List<Metadata>) q.list();
+            tx.commit();
+            
+            for(int i=0; i<metadata.size(); i++) {
+                vals[i] = metadata.get(i).getValeur();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return vals;
+    } 
+    
+    
 }
 
 
