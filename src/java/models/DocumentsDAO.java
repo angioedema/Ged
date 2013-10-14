@@ -73,6 +73,26 @@ public class DocumentsDAO implements Serializable {
         return vals;
     } 
     
+       public List<Documents> getGenre(String genre) {
+        List<Documents> docs = null;
+	
+        try {
+            session = HibernateUtil.getSessionFactory().getCurrentSession();
+            Transaction tx = session.beginTransaction();
+            Query q = session.createSQLQuery(
+		"select documents.* from documents "
+		    + "inner join metadata "
+		    + "on metadata.ID_Doc=documents.ID_Doc "
+		    + "where metadata.ID_DT = 3 AND metadata.valeur = '"+ genre + "'"
+	    ).addEntity(Documents.class);
+            docs = (List<Documents>) q.list();
+            tx.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+	return docs;
+    } 
+    
     
 }
 

@@ -4,7 +4,8 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      >
+	  
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
         <title>GPHYGED - Accueil</title>
@@ -46,6 +47,50 @@
             </p:layoutUnit>
 
             <p:layoutUnit id="center" position="center">
+		<h:form id="form">
+		    <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5"  
+				 columnClasses="label, column">  
+			<h:outputText value="Genre" />  
+			<p:selectOneListbox id="genre" value="#{selectGenre.valeur}">  
+			    <f:selectItem itemLabel="Pop" itemValue="pop" />  
+			    <f:selectItem itemLabel="Rock" itemValue="rock" />  
+			    <f:selectItem itemLabel="Variété" itemValue="variete" />  
+			</p:selectOneListbox> 
+		    </h:panelGrid>		
+		    <p:commandButton 
+			id="submitButton" value="Visualiser" ajax="true" 
+			immediate="false" action="#{selectGenre.loadListeGenre()}" 
+			update=":formDisplay" 
+		    />  
+		</h:form>
+		<h:form id="formDisplay"> 
+		    <p:dataTable value="#{selectGenre.docs}" var="doc">
+			<p:column>
+			    <f:facet name="header">Titre</f:facet>  
+			    <h:outputText value="#{documentsDAO.getMetadataFromDoc(doc.idDoc)[0]}"/>
+			</p:column>
+			<p:column>
+			    <f:facet name="header">Taille</f:facet>  
+			    <h:outputText value="#{doc.taille}"/>
+			</p:column>                        
+			<p:column>
+			    <f:facet name="header">Artiste</f:facet>  
+			    <h:outputText value="#{documentsDAO.getMetadataFromDoc(doc.idDoc)[1]}"/>
+			</p:column>  
+			<p:column>
+			    <f:facet name="header">Genre</f:facet>  
+			    <h:outputText value="#{documentsDAO.getMetadataFromDoc(doc.idDoc)[2]}"/>
+			</p:column>
+			<p:column>
+			    <f:facet name="header">Album</f:facet>  
+			    <h:outputText value="#{documentsDAO.getMetadataFromDoc(doc.idDoc)[3]}"/>
+			</p:column>   
+			<p:column>
+			    <f:facet name="header">Duree</f:facet>  
+			    <h:outputText value="#{documentsDAO.getMetadataFromDoc(doc.idDoc)[4]}"/>
+			</p:column>
+		    </p:dataTable>
+		</h:form>	
             </p:layoutUnit>
 
         </p:layout>
